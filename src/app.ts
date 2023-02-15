@@ -8,7 +8,7 @@ var http = require("http");
 const {createBot,createProvider,createFlow,addKeyword} = require("@bot-whatsapp/bot");
 const WebWhatsappProvider = require("@bot-whatsapp/provider/baileys");
 const MockAdapter = require("@bot-whatsapp/database/mock");
-  
+const QRPortalweb = require("@bot-whatsapp/portal")
 var admin = require("firebase-admin");
 var serviceAccount = require("../ali");
 var server = http.createServer(app);
@@ -205,7 +205,7 @@ app.get("/autentificar", (req,res) =>{
         provider: adapterProvider,
         database: adapterDB,
     });
-
+    QRPortalweb()
     res.send(true)
 
 })
